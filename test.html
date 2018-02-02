@@ -11,63 +11,42 @@
 
 <body>
 
-<<<<<<< Updated upstream
-    <div class="container">
-        <button onclick="start()">Hit</button>
-        <button onclick="yes()">Hit</button>
-        <button onclick="smt_else()">Hit</button>
-=======
-    <!-- <div class="container"> -->
-            <button id="startBtn"onclick="start()">Start</button>
-        <button id="hitBtn" onclick="yes()">Hit</button>
-        <button id="hitBtn" onclick="smt_else()">Hit</button>
->>>>>>> Stashed changes
+
+            <button id="startBtn">Start</button>
+        <button id="hitBtn">Hit</button>
         <div id="deck">
 
         </div>
         <div class="board">
-            <div id="playercards">
-            </div>
             <div id="dealercards">
+            </div>
+            <div id="playercards">
             </div>
         </div>
 
-    </div>
+
+        <div class="sumdisplay">
+                Your score :
+                <input type="text" id="playersum" value="">Dealer score :
+                <input type="text" id="dealersum" value="">
+              </div>
+              <div class="result">
+                <div id="show"> Result:
+              <input type="text" id="resultbox">
+                </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
     <script src="js/deck.js"></script>
     <script src="js/make.js"></script>
-    <!-- <script>
 
-
-        var deck = generateDeck();
-        deck = shuffleDeck(deck);
-        renderDeck();
-
-
-        function renderDeck() {
-            $('#deck').empty();
-
-            deck.forEach(function (card) {
-                $('#deck').append(renderCard(card));
-            })
-        }
-
-
-        function renderCard(card) {
-            if (card.reversed) {
-                return '<div class="card reversed"></div>';
-            } else {
-                return '<div class="card ' + card.suit + '-' + card.value + '"></div>';
-            }
-
-        }
-    </script> -->
     <script src="js/t.js"></script>
     <script>
         var deck = generateDeck()
         deck = shuffleDeck(deck)
+
     </script>
 
 </body>
