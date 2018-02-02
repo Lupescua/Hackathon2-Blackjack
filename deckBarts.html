@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/stylebart.css">
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        .card{
+            float:left;
+        }
+    </style>
 
     <title>Document</title>
 </head>
 <body>
-
-
-
-
-
-
           <h2>♠ BLACKJACK ♥</h2>
           <div id="container">
+
+
+
             <div class="images">
               <div id="playercards">
               </div>
@@ -39,7 +43,7 @@
               <input type="text" id="dealersum" value="">
             </div>
             <div class="result">
-              <div id="show"> Result: 
+              <div id="show"> Result:
             <input type="text" id="resultbox">
               </div>
 
@@ -47,8 +51,34 @@
           </div>
 
         </body>
-        <script src="blackjack.js"></script>
+        <!-- <script src="blackjack.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="js/deck.js"></script>
+        <script>
+            var deck = generateDeck();
+            deck = shuffleDeck(deck);
+            renderDeck();
 
+
+            function renderDeck(){
+                $('#deck').empty();
+
+                deck.forEach(function(card){
+                    $('#deck').append(renderCard(card));
+                })
+            }
+
+
+            function renderCard(card){
+                if(card.reversed){
+                    return '<div class="card reversed"></div>';
+                }else{
+                    return '<div class="card ' + card.suit + '-' + card.value + '"></div>';
+                }
+
+            }
+
+        </script>
 
 
 </body>
