@@ -13,7 +13,6 @@ function generateDeck(){
             });
         }
     }
-
     return deck;
 }
 
@@ -36,3 +35,4 @@ function shuffleDeck(deck) {
 
     return deck;
 }
+

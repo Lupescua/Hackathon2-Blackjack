@@ -11,9 +11,10 @@
 
 <body>
 
-    <!-- <div class="container"> -->
-        <button id="hitBtn" onclick="yes()">Hit</button>
-        <button id="hitBtn" onclick="smt_else()">Hit</button>
+    <div class="container">
+        <button onclick="start()">Hit</button>
+        <button onclick="yes()">Hit</button>
+        <button onclick="smt_else()">Hit</button>
         <div id="deck">
 
         </div>
@@ -24,11 +25,12 @@
             </div>
         </div>
 
-    <!-- </div> -->
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
     <script src="js/deck.js"></script>
+    <script src="js/make.js"></script>
     <!-- <script>
 
 
@@ -58,11 +60,7 @@
     <script src="js/t.js"></script>
     <script>
         var deck = generateDeck()
-        deck=shuffleDeck(deck)
-
-    // pop_dealer(deck[1]);
-    // pop_player(deck[1]);
-    // hand(deck);
+        deck = shuffleDeck(deck)
     </script>
 
 </body>

@@ -8,9 +8,6 @@ playerCards.count = 0;   // Number of cards actually in the player's hand
 
 var gameInProgress = false;
 var hit = $('$hitbtn');
-var
-
-
 
 
 // Create and shuffle a deck of cards
@@ -30,8 +27,9 @@ function generateDeck(){
             });
         }
     }
-        return deck;
+    return deck;
 }
+
 function shuffleDeck(deck) {
     var counter = deck.length;
 
@@ -104,3 +102,21 @@ function user_deck(target){
 // User draws cards (if user goes over 21, game ends)
 // Dealer draws cards
 // Check for winner
+
+
+function yes(){
+    var cardsInHand = [];
+    var our_card = deck.pop();
+    cardsInHand.push(our_card);
+    $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+}
+
+function smt_else(){
+var cardsInHand = [];
+var our_card = deck.pop();
+cardsInHand.push(our_card);
+
+$('#playercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+
+
+}
