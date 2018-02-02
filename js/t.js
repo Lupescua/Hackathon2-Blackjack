@@ -79,23 +79,32 @@ function renderCard(card, divID){
 
 
 //dealer
-$( document ).ready(function() {
-    function yes(val){
-        var cardsInHand = [];
-        var our_card = deck.pop();
-        cardsInHand.push(our_card);
-        our_card.reversed = val;
-        renderCard(our_card, 'dealercards')
+function yes(val){
+    var cardsInHand = [];
+    var our_card = deck.pop();
+    cardsInHand.push(our_card);
+    our_card.reversed = val;
+    renderCard(our_card, 'dealercards');
 
-
-    }
-        yes(false);
-        yes(true);
-
+    if(our_card.reversed === false ){
         var value = calcValue(our_card);
-        playerSum = playerSum + value;
-        $('#dealersum').val(playerSum);
+        dealerSum = dealerSum + value;
+        $('#dealersum').val(dealerSum);
+        console.log('something');
+    }
+
+}
+
+$( document ).ready(function() {
+
+    yes(false);
+    yes(true);
+
     });
+
+    $("#standBtn").click(function() {
+        yes(false);
+      });
 
 
 
@@ -113,6 +122,7 @@ $( document ).ready(function() {
 }
 
 var playerSum = 0;
+var dealerSum = 0;
 
 $("#hitBtn").click(function() {
     smt_else(false);
