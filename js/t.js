@@ -1,52 +1,60 @@
-// Create and shuffle a deck of cards - we already have this
+function generateDeck(){
+    var deck = [];
 
+    var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
+    var values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+    for(var s = 0; s < suits.length; s++){
+        for(var v = 0; v < values.length; v++){
 
-
-
-
-// Create two BlackjackHands, userHand and dealerHand -
-
-function Dealer(card) {
-
-	this.card[{'suit': suits[s]},
-    {'value': values[v]},
-    {'reversed': false}],
-
-
-    this. sum: card[{1.value}]+card[{2.value}]+card[{3.value}],
-
-	this.info = function() {
-        return this.sum;
+            deck.push({
+                'suit': suits[s],
+                'value': values[v],
+                'reversed': false
+            });
+        }
     }
 
-function Player1(card) {
-	this.card[{'suit': suits[s]},
-    {'value': values[v]},
-    {'reversed': false}],
-this. sum: card[{1.value}]+card[{2.value}]+card[{3.value}],
+    return deck;
+}
 
-	this.info = function() {
-        return this.sum;
+
+function shuffleDeck(deck) {
+    var counter = deck.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random indexx§
+        var index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        var temp = deck[counter];
+        deck[counter] = deck[index];
+        deck[index] = temp;
     }
 
-// Deal two cards into each hand
-
-// my comment: Function which targets a user, and gives him 1 card.
-
-function Deal(target, card){
-    deck
-// append the users deck with his card
-
+    return deck;
 }
 
-// Check if dealer has blackjack (if so, game ends)
-// Check if user has blackjack (if so, game ends)
+ function pop_card(card){
+    console.log($('#deck'))
 
-// my comment: Create a check value of user deck.
-function user_deck(target){
+      $('#deck').append('<div class="card ' + card.suit+ '-' + card.value+ ' "></div>');
 
-}
 
-// User draws cards (if user goes over 21, game ends)
-// Dealer draws cards
-// Check for winner
+ }
+
+ $('#hitBtn').click( function(){
+
+
+        var cardsInHand = [];
+        var our_card = deck.pop();
+        cardsInHand.push(our_card);
+        pop_card(our_card);
+
+    //  }
+ })
+
+
