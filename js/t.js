@@ -79,7 +79,7 @@ function renderCard(card, divID){
 
 
 //dealer
-function yes(val){
+function deal(val){
     var cardsInHand = [];
     var our_card = deck.pop();
     cardsInHand.push(our_card);
@@ -95,15 +95,15 @@ function yes(val){
 
 }
 
-$( document ).ready(function() {
+$("#startBtn").click(function() {
 
-    yes(false);
-    yes(true);
+    deal(false);
+    deal(true);
 
     });
 
     $("#standBtn").click(function() {
-        yes(false);
+        deal(false);
       });
 
 
