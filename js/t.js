@@ -1,24 +1,11 @@
-window.onload = function() {
 
-    init();
-
-        function init() {
-
-            hitButton = document.getElementById('hitBtn');
-            standButton = document.getElementById('standBtn');
-            hitButton.onclick = hitPlayer;
-            standButton.onclick = hitDealer;
-
-
-
-        }
 
 
     function generateDeck(){
         var deck = [];
 
         var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
-        var values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+        var values = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king'];
         for(var s = 0; s < suits.length; s++){
             for(var v = 0; v < values.length; v++){
 
@@ -31,6 +18,19 @@ window.onload = function() {
         }
 
         return deck;
+
+    }
+
+
+
+    function calcValue(card) {
+        switch(card.value) {
+            case 'ace': return 1
+            case 'jack':
+            case 'queen':
+            case 'king': return 10
+            default: return parseInt(card.value);
+        }
     }
 
 
@@ -55,88 +55,70 @@ window.onload = function() {
     }
 
 
-    // function  start(){
-    // var count = 0;
-    // for(i=0; i<10; i++){
-    //     count++;
 
-    // }
-    // function yes(){
-
-
-    //     var cardsInHand = [];
-    //     var our_card = deck.pop();
-    //     cardsInHand.push(our_card);
-    //     $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
-    // }
-
-    // }
-
-
-
-
-    function Hand(deck){
-
-
-        if(this === playerHand) {
-            area = document.getElementById("playerCards");
-        } else if (this === dealerHand) {
-            area = document.getElementById("dealerCards");
-        }
-
-
-
-
-
-     for(var i=0; i<cardArray.length; i++) {
-        var our_card = deck.pop();
-        cardsInHand.push(our_card);
-        $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
-
-        area.appendChild(cardsInHand[i]);
-
-    }
-
+    this.getValue = function() {
 
     }
 
 
 
+//render card
+
+function renderCard(card, divID){
+    if (card.reversed == true){
+        $('#'+divID).append('<div class="card reversed"></div>');
+    } else {
+
+        $('#'+divID).append('<div class="card ' + card.suit+ '-' + card.value+ ' "></div>');
+    }
+}
 
 
-    function yes(){
+
+
+
+
+//dealer
+$( document ).ready(function() {
+    function yes(val){
         var cardsInHand = [];
         var our_card = deck.pop();
         cardsInHand.push(our_card);
-        $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
-    }
+        our_card.reversed = val;
+        renderCard(our_card, 'dealercards')
 
-    function smt_else(){
+
+    }
+        yes(false);
+        yes(true);
+
+        var value = calcValue(our_card);
+        playerSum = playerSum + value;
+        $('#dealersum').val(playerSum);
+    });
+
+
+
+    ///player
+    function smt_else(val){
     var cardsInHand = [];
     var our_card = deck.pop();
     cardsInHand.push(our_card);
+    our_card.reversed = val;
+    renderCard(our_card, 'playercards')
 
-    $('#playercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+    var value = calcValue(our_card);
+    playerSum = playerSum + value;
+    $('#playersum').val(playerSum);
+}
 
+var playerSum = 0;
 
-    }
-
-    // function yes(){
-    //         var cardsInHand = [];
-    //         var our_card = deck.pop();
-    //         cardsInHand.push(our_card);
-    //         $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
-    //  }
-
-    //  function smt_else(){
-    //     var cardsInHand = [];
-    //     var our_card = deck.pop();
-    //     cardsInHand.push(our_card);
-
-    //     $('#playercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+$("#hitBtn").click(function() {
+    smt_else(false);
+  });
 
 
-    //  }
 
 
-     }
+
