@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/stylebart.css">
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        .card{
+            float:left;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+          <h2>♠ BLACKJACK ♥</h2>
+          <div id="container">
+
+            <div class="images">
+              <div id="playercards">
+              </div>
+              <div id="dealercards">
+              </div>
+            </div>
+            <div class="buttons">
+              <div class="startplay">
+                <button id="startBtn">Start</button>
+
+              </div>
+              <div class="hitstand">
+                <button id="hitBtn" >Hit</button>
+                <button id="standBtn">Stand</button>
+              </div>
+            </div>
+            <div class="sumdisplay">
+              Your score :
+              <input type="text" id="playersum" value="">Dealer score :
+              <input type="text" id="dealersum" value="">
+            </div>
+            <div class="result">
+              <div id="show"> Result:
+            <input type="text" id="resultbox">
+              </div>
+
+            </div>
+          </div>
+
+
+          <script src="js/make.js"></script>
+          <script>
+                  var deck = generateDeck();
+                  deck = shuffleDeck(deck);
+              </script>
+        </body>
+</html>

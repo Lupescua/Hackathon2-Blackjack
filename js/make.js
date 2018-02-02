@@ -1,18 +1,3 @@
-window.onload = function() {
-
-    init();
-
-        function init() {
-
-            hitButton = document.getElementById('hitBtn');
-            standButton = document.getElementById('standBtn');
-            hitButton.onclick = hitPlayer;
-            standButton.onclick = hitDealer;
-
-
-
-        }
-
 
     function generateDeck(){
         var deck = [];
@@ -53,27 +38,6 @@ window.onload = function() {
 
         return deck;
     }
-
-
-    // function  start(){
-    // var count = 0;
-    // for(i=0; i<10; i++){
-    //     count++;
-
-    // }
-    // function yes(){
-
-
-    //     var cardsInHand = [];
-    //     var our_card = deck.pop();
-    //     cardsInHand.push(our_card);
-    //     $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
-    // }
-
-    // }
-
-
-
 
     function Hand(deck){
 
