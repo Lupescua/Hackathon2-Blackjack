@@ -4,11 +4,32 @@
 
 
 
+// Create two BlackjackHands, userHand and dealerHand -
 
+function Dealer(color, name, x, y, mouth, facing) {
+	this.color = color;
+	this.name = name;
+	this.x = x;
+	this.y = y;
+	this.facing = facing;
+	this.mouth = mouth;
 
+	this.info = function() {
+		return this.color + ' ' + this.name;
+    }
 
+function Player1(color, name, x, y, mouth, facing) {
+    this.color = color;
+    this.name = name;
+    this.x = x;
+    this.y = y;
+    this.facing = facing;
+    this.mouth = mouth;
 
-// Create two BlackjackHands, userHand and dealerHand
+    this.info = function() {
+        return this.color + ' ' + this.name;
+    }
+
 // Deal two cards into each hand
 
 
