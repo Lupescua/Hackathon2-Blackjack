@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/cards.css" />
+    <style>
+        .card{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+<div id="deck">
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<script src="js/deck.js"></script>
+<script>
+    var deck = generateDeck();
+    deck = shuffleDeck(deck);
+    renderDeck();
+
+
+    function renderDeck(){
+        $('#deck').empty();
+
+        deck.forEach(function(card){
+            $('#deck').append(renderCard(card));
+        })
+    }
+
+
+    function renderCard(card){
+        if(card.reversed){
+            return '<div class="card reversed"></div>';
+        }else{
+            return '<div class="card ' + card.suit + '-' + card.value + '"></div>';
+        }
+
+    }
+
+</script>
+</body>
+</html>
