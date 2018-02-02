@@ -12,10 +12,18 @@
 <body>
 
     <!-- <div class="container"> -->
+        <button id="hitBtn" onclick="yes()">Hit</button>
+        <button id="hitBtn" onclick="smt_else()">Hit</button>
         <div id="deck">
 
         </div>
-        <button id="hitBtn">Hit</button>
+        <div class="board">
+            <div id="playercards">
+            </div>
+            <div id="dealercards">
+            </div>
+        </div>
+
     <!-- </div> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -52,7 +60,8 @@
         var deck = generateDeck()
         deck=shuffleDeck(deck)
 
-    pop_card(deck[1]);
+    // pop_dealer(deck[1]);
+    // pop_player(deck[1]);
     // hand(deck);
     </script>
 

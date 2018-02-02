@@ -1,7 +1,18 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+}
+
 .card {
     width: 7.73em;
     height: 12.0em;
-    /* position: relative; */
+    position: relative;
     background-size: contain;
     background-repeat: no-repeat;
 }

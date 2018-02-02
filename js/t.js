@@ -38,23 +38,46 @@ function shuffleDeck(deck) {
     return deck;
 }
 
- function pop_card(card){
-    console.log($('#deck'))
-
-      $('#deck').append('<div class="card ' + card.suit+ '-' + card.value+ ' "></div>');
+//  function pop_card(card){
 
 
- }
-
- $('#hitBtn').click( function(){
+//       $('#playercards').append('<div class="card ' + card.suit+ '-' + card.value+ ' "></div>');
 
 
+//  }
+
+
+
+//  $('#hitBtn').click( function(){
+
+
+//         var cardsInHand = [];
+//         var our_card = deck.pop();
+//         cardsInHand.push(our_card);
+//         pop_card(our_card);
+
+
+//  })
+
+
+
+
+
+function yes(){
         var cardsInHand = [];
         var our_card = deck.pop();
         cardsInHand.push(our_card);
-        pop_card(our_card);
+        $('#dealercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+ }
 
-    //  }
- })
+ function smt_else(){
+    var cardsInHand = [];
+    var our_card = deck.pop();
+    cardsInHand.push(our_card);
+
+    $('#playercards').append('<div class="card ' + our_card.suit+ '-' + our_card.value+ ' "></div>');
+
+
+ }
 
 
