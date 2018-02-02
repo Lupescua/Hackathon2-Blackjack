@@ -1,15 +1,17 @@
-/* html {
-    margin: 0;
+html {
+    margin: 5%;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", "sans-serif";
+    font-family: Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
     font-weight: 200;
     font-size: 20px;
-    color: #ffffff;
-  } */
+    /* color: #ffffff; */
+  }
   body {
     background-color: #22a33e;
+    color: hsl(56, 80%, 48%);
+
   }
   h2 {
     text-align: center;
@@ -21,6 +23,9 @@
     padding: 1%;
     width: 50%;
     margin-left: 25%;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2bcf2b;
   }
   /* .images {
     background-color: #112b42;
@@ -31,12 +36,14 @@
     padding: 0.5%;
     background-color: #31172a;
     height: 125px;
+    border-radius: 25px 25px 0px 0px;
   }
   #dealercards {
     margin: 0 auto;
     padding: 1%;
     background-color: #062c09;
     height: 125px;
+    border-radius: 0px 0px 25px 25px;
   }
   .dealreset {
     display: block;
@@ -50,9 +57,11 @@
   #startBtn {
     width: 15%;
     height: 10%;
-    display: inline-block;
+    display: flex;
     position: relative;
-    margin: 1% 30%;
+    justify-content: center;
+    margin: 1%  auto;
+    border-radius: 10px;
     /* border-radius: 20px 2px;
     overflow-wrap: break-word; */
     /* when text-overflows break the letters and wrap in new-lines */
@@ -68,14 +77,14 @@
     display: inline-block;
     margin: 0.5% 15%;
     position: relative;
-    border-radius: 1% 2%;
+    border-radius: 10px;
     overflow-x: hidden;
     /* hide text that overflows in x-axis */
     text-overflow: ellipsis;
     /* add ... in button to show that some text is there */
   }
   input[type=text] {
-    border-radius: 5%;
+    border-radius: 10px;
   }
   .sumdisplay {
     display: block;
@@ -130,3 +139,9 @@
   a:visited {
     color: red;
   }
+
+  /* startPlay {
+    display: flex;
+    position: absolute;
+  } */
+
